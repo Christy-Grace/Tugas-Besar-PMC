@@ -7,9 +7,6 @@ from matplotlib import style
 time = arr.array('d',[]); #array for time
 value = arr.array('d',[]); #array for voltage/current
 
-user_input = input();
-
-
 #reading file
 
 filename = "rangkaian_RC.csv";
@@ -22,6 +19,9 @@ with open(filename,'r') as filehandle:
         token = re.split(";",line); #splitting the line with the deliminator ";"
         time.append(float(token[0]));
         value.append(float(token[1]));
+        
+#user input 
+user_input = input();
 
 #displaying the graphic
 style.use('ggplot')
