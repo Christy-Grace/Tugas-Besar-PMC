@@ -414,7 +414,7 @@ def generateEquiGraph() :
 
     return;
 
-def generateGraph ():
+def generateGraph (user_input):
     plt.close("all");
     #creating an array with 'd' as double float
     time = arr.array('d',[]); #array for time
@@ -436,7 +436,6 @@ def generateGraph ():
     #displaying the graphic
     style.use('ggplot')
     plt.scatter(time, value)#, align='center'
-    user_input = "V"; "INI NANTI DIHAPUS YAKKKKKKKKKK"
     if((user_input == 'v') or (user_input == 'V')) :
         plt.title('Voltage vs Time');
         plt.ylabel('Voltage(V)');
@@ -461,7 +460,7 @@ def quit() :
 b1 = Button(screen, text = "Show Equivalent Circuit",width=30,command=createEquiCircuit)
 b2 = Button(screen, text = "Show Circuit",width=30,command=createCircuit)
 b3 = Button(screen, text = "Generate Equivalent Graphic",width=30,command=generateEquiGraph)
-b4 = Button(screen, text = "Generate Graphic",width=30,command=generateGraph)#gk bisa letakkan parameter sebagai command
+b4 = Button(screen, text = "Generate Graphic",width=30,command=lambda : generateGraph("V"))#gk bisa letakkan parameter sebagai command
 b_quit = Button(screen, text = "Quit",width=30,command=quit)
 b1.place(relx = 0.1, rely = 0.1, anchor = CENTER)
 b2.place(relx = 0.1, rely = 0.15, anchor = CENTER)
